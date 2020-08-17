@@ -48,7 +48,7 @@ public class @PlayerActionInputs : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Negative"",
                     ""id"": ""c6b3c849-11e5-41bc-99f5-31da9b33a5b2"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
@@ -59,7 +59,7 @@ public class @PlayerActionInputs : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""Positive"",
                     ""id"": ""07f68dcc-9c6c-48b2-9cb2-24666445fd5a"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
@@ -116,7 +116,7 @@ public class @PlayerActionInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""230d8797-a1a8-4568-9376-d74ebd03fd3a"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -127,7 +127,7 @@ public class @PlayerActionInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""eed313d8-4fff-43eb-92f2-14c39271b0bf"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -149,7 +149,7 @@ public class @PlayerActionInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""79cb5dc4-4d74-4650-97b4-04bd63f90d26"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -160,7 +160,7 @@ public class @PlayerActionInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""d08e30a3-f084-4471-b190-f34f24e7be8c"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
