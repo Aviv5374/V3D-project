@@ -45,11 +45,11 @@ public class PlayerController : MonoBehaviour
 
     void CalculateMovement()
     {
-        float horizontal = inputActions.Move.Horizontal.ReadValue<float>();
-        float vertical = inputActions.Move.Vertical.ReadValue<float>();
-        Debug.Log(horizontal);
-        Debug.Log(vertical);
-        Vector3 direction = new Vector3(horizontal, 0, vertical);
+        float horizontalAxis = inputActions.Move.Horizontal.ReadValue<float>();
+        float verticalAxis = inputActions.Move.Vertical.ReadValue<float>();
+        Debug.Log("horizontal Axis=" + horizontalAxis);
+        Debug.Log("vertical Axis=" + verticalAxis);
+        Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis);
         Vector3 velocity = direction * speed;
         velocity.y -= _gravity;
         velocity = transform.TransformDirection(velocity);
