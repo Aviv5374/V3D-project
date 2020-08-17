@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerActionInputs inputActions;
     CharacterController controller;
+    ThirdPersonController thirdPersonController;
 
     #region Initialization
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         inputActions = new PlayerActionInputs();
         controller = GetComponent<CharacterController>();
+        thirdPersonController = GetComponent<ThirdPersonController>();
 	}
 
     void OnEnable()
@@ -36,24 +38,32 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CalculateMovement();
-        //Vector3 move = new Vector3(0, 0, 0);
-        //transform.Translate(move * speed * Time.deltaTime);
+        Move();
+        CalculateMovement();        
     }
 
     #endregion
+
+    void Move()
+    {
+        float horizontalAxis = inputActions.Move.Horizontal.ReadValue<float>();
+        float verticalAxis = inputActions.Move.Vertical.ReadValue<float>();
+        Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
+        thirdPersonController.ThirdPersonMovment(direction);
+    }
 
     void CalculateMovement()
     {
         float horizontalAxis = inputActions.Move.Horizontal.ReadValue<float>();
         float verticalAxis = inputActions.Move.Vertical.ReadValue<float>();
-        Debug.Log("horizontal Axis=" + horizontalAxis);
-        Debug.Log("vertical Axis=" + verticalAxis);
-        Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis);
-        Vector3 velocity = direction * speed;
-        velocity.y -= _gravity;
-        velocity = transform.TransformDirection(velocity);
-        controller.Move(velocity * Time.deltaTime);
+        //Debug.Log("horizontal Axis=" + horizontalAxis);
+        //Debug.Log("vertical Axis=" + verticalAxis);
+        Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
+        Debug.Log("direction.magnitude = " + direction.magnitude);
+        //Vector3 velocity = direction * speed;
+        //velocity.y -= _gravity;
+        //velocity = transform.TransformDirection(velocity);
+        //controller.Move(velocity * Time.deltaTime);
     }
 
     void OnDisable()
