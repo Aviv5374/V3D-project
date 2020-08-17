@@ -38,16 +38,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Move();
-        CalculateMovement();        
+        Move();          
     }
 
     #endregion
 
     void Move()
     {
-        float horizontalAxis = inputActions.Move.Horizontal.ReadValue<float>();
-        float verticalAxis = inputActions.Move.Vertical.ReadValue<float>();
+        //float horizontalAxis = inputActions.Move.Horizontal.ReadValue<float>();
+        //float verticalAxis = inputActions.Move.Vertical.ReadValue<float>();
+        float horizontalAxis = Input.GetAxisRaw("Horizontal");
+        float verticalAxis = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
         thirdPersonController.ThirdPersonMovment(direction);
     }
