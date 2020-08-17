@@ -164,8 +164,8 @@
 											},
 											"font": "Arial;13;0",
 											"containerChangeable": true,
-											"left": 1072,
-											"top": 264,
+											"left": 528,
+											"top": 832,
 											"width": 26,
 											"height": 26
 										},
@@ -1072,6 +1072,306 @@
 											"propertyLabel": {
 												"$ref": "AAAAAAFz+6E7VhHDAfQ="
 											}
+										},
+										{
+											"_type": "UMLActionView",
+											"_id": "AAAAAAFz+6O8KBHUkPQ=",
+											"_parent": {
+												"$ref": "AAAAAAFz90ap/zBmpcg="
+											},
+											"model": {
+												"$ref": "AAAAAAFz+6O8KBHS+m8="
+											},
+											"subViews": [
+												{
+													"_type": "UMLNameCompartmentView",
+													"_id": "AAAAAAFz+6O8KRHVMLQ=",
+													"_parent": {
+														"$ref": "AAAAAAFz+6O8KBHUkPQ="
+													},
+													"model": {
+														"$ref": "AAAAAAFz+6O8KBHS+m8="
+													},
+													"subViews": [
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6O8KRHWkOI=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6O8KRHVMLQ="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"height": 13
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6O8KRHXyu0=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6O8KRHVMLQ="
+															},
+															"font": "Arial;13;1",
+															"left": 405,
+															"top": 567,
+															"width": 334,
+															"height": 13,
+															"text": "מעדכנים את ערכי הווקטור לפי הצורך"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6O8KRHYOvM=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6O8KRHVMLQ="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"width": 98.9599609375,
+															"height": 13,
+															"text": "(from Movement)"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6O8KRHZvTo=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6O8KRHVMLQ="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"height": 13,
+															"horizontalAlignment": 1
+														}
+													],
+													"font": "Arial;13;0",
+													"left": 400,
+													"top": 560,
+													"width": 344,
+													"height": 25,
+													"stereotypeLabel": {
+														"$ref": "AAAAAAFz+6O8KRHWkOI="
+													},
+													"nameLabel": {
+														"$ref": "AAAAAAFz+6O8KRHXyu0="
+													},
+													"namespaceLabel": {
+														"$ref": "AAAAAAFz+6O8KRHYOvM="
+													},
+													"propertyLabel": {
+														"$ref": "AAAAAAFz+6O8KRHZvTo="
+													}
+												}
+											],
+											"font": "Arial;13;0",
+											"containerChangeable": true,
+											"left": 400,
+											"top": 560,
+											"width": 344,
+											"height": 41,
+											"nameCompartment": {
+												"$ref": "AAAAAAFz+6O8KRHVMLQ="
+											}
+										},
+										{
+											"_type": "UMLActionView",
+											"_id": "AAAAAAFz+6RmCxHucQY=",
+											"_parent": {
+												"$ref": "AAAAAAFz90ap/zBmpcg="
+											},
+											"model": {
+												"$ref": "AAAAAAFz+6RmCxHs0aM="
+											},
+											"subViews": [
+												{
+													"_type": "UMLNameCompartmentView",
+													"_id": "AAAAAAFz+6RmCxHvYOk=",
+													"_parent": {
+														"$ref": "AAAAAAFz+6RmCxHucQY="
+													},
+													"model": {
+														"$ref": "AAAAAAFz+6RmCxHs0aM="
+													},
+													"subViews": [
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6RmDBHwxac=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6RmCxHvYOk="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": -96,
+															"top": -80,
+															"height": 13
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6RmDBHxjEs=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6RmCxHvYOk="
+															},
+															"font": "Arial;13;1",
+															"left": 405,
+															"top": 647,
+															"width": 317.12890625,
+															"height": 13,
+															"text": "מכפילים את הוקטור בערך מהירות ובערך זמן של עמנוע"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6RmDBHy2pQ=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6RmCxHvYOk="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": -96,
+															"top": -80,
+															"width": 98.9599609375,
+															"height": 13,
+															"text": "(from Movement)"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6RmDBHzYsk=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6RmCxHvYOk="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": -96,
+															"top": -80,
+															"height": 13,
+															"horizontalAlignment": 1
+														}
+													],
+													"font": "Arial;13;0",
+													"left": 400,
+													"top": 640,
+													"width": 327.12890625,
+													"height": 25,
+													"stereotypeLabel": {
+														"$ref": "AAAAAAFz+6RmDBHwxac="
+													},
+													"nameLabel": {
+														"$ref": "AAAAAAFz+6RmDBHxjEs="
+													},
+													"namespaceLabel": {
+														"$ref": "AAAAAAFz+6RmDBHy2pQ="
+													},
+													"propertyLabel": {
+														"$ref": "AAAAAAFz+6RmDBHzYsk="
+													}
+												}
+											],
+											"font": "Arial;13;0",
+											"containerChangeable": true,
+											"left": 400,
+											"top": 640,
+											"width": 327.12890625,
+											"height": 64,
+											"nameCompartment": {
+												"$ref": "AAAAAAFz+6RmCxHvYOk="
+											}
+										},
+										{
+											"_type": "UMLActionView",
+											"_id": "AAAAAAFz+6VcvRIJLew=",
+											"_parent": {
+												"$ref": "AAAAAAFz90ap/zBmpcg="
+											},
+											"model": {
+												"$ref": "AAAAAAFz+6VcvRIHSgY="
+											},
+											"subViews": [
+												{
+													"_type": "UMLNameCompartmentView",
+													"_id": "AAAAAAFz+6VcvRIKc5Q=",
+													"_parent": {
+														"$ref": "AAAAAAFz+6VcvRIJLew="
+													},
+													"model": {
+														"$ref": "AAAAAAFz+6VcvRIHSgY="
+													},
+													"subViews": [
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6VcvRIL/3U=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6VcvRIKc5Q="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": -112,
+															"top": -16,
+															"height": 13
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6VcvRIM154=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6VcvRIKc5Q="
+															},
+															"font": "Arial;13;1",
+															"left": 397,
+															"top": 751,
+															"width": 312.1142578125,
+															"height": 13,
+															"text": "שולחים את התוצאה למטודת התנוע של מנהל הדמויות"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6VcvRIN/bA=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6VcvRIKc5Q="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": -112,
+															"top": -16,
+															"width": 98.9599609375,
+															"height": 13,
+															"text": "(from Movement)"
+														},
+														{
+															"_type": "LabelView",
+															"_id": "AAAAAAFz+6VcvRIOV94=",
+															"_parent": {
+																"$ref": "AAAAAAFz+6VcvRIKc5Q="
+															},
+															"visible": false,
+															"font": "Arial;13;0",
+															"left": -112,
+															"top": -16,
+															"height": 13,
+															"horizontalAlignment": 1
+														}
+													],
+													"font": "Arial;13;0",
+													"left": 392,
+													"top": 744,
+													"width": 322.1142578125,
+													"height": 25,
+													"stereotypeLabel": {
+														"$ref": "AAAAAAFz+6VcvRIL/3U="
+													},
+													"nameLabel": {
+														"$ref": "AAAAAAFz+6VcvRIM154="
+													},
+													"namespaceLabel": {
+														"$ref": "AAAAAAFz+6VcvRIN/bA="
+													},
+													"propertyLabel": {
+														"$ref": "AAAAAAFz+6VcvRIOV94="
+													}
+												}
+											],
+											"font": "Arial;13;0",
+											"containerChangeable": true,
+											"left": 392,
+											"top": 744,
+											"width": 322.1142578125,
+											"height": 41,
+											"nameCompartment": {
+												"$ref": "AAAAAAFz+6VcvRIKc5Q="
+											}
 										}
 									]
 								}
@@ -1140,6 +1440,30 @@
 										"$ref": "AAAAAAFz90ap/zBleLE="
 									},
 									"name": "יוצרת וקטור 3 ומעדכנן את כאשר ערכי איקס וזד מקבלים את ערכי הקפתור ווואי נשאר אפס"
+								},
+								{
+									"_type": "UMLAction",
+									"_id": "AAAAAAFz+6O8KBHS+m8=",
+									"_parent": {
+										"$ref": "AAAAAAFz90ap/zBleLE="
+									},
+									"name": "מעדכנים את ערכי הווקטור לפי הצורך"
+								},
+								{
+									"_type": "UMLAction",
+									"_id": "AAAAAAFz+6RmCxHs0aM=",
+									"_parent": {
+										"$ref": "AAAAAAFz90ap/zBleLE="
+									},
+									"name": "מכפילים את הוקטור בערך מהירות ובערך זמן של עמנוע"
+								},
+								{
+									"_type": "UMLAction",
+									"_id": "AAAAAAFz+6VcvRIHSgY=",
+									"_parent": {
+										"$ref": "AAAAAAFz90ap/zBleLE="
+									},
+									"name": "שולחים את התוצאה למטודת התנוע של מנהל הדמויות"
 								}
 							],
 							"edges": [
