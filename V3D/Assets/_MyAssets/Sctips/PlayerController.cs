@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-
+            shooter.Shoot();
         }
 
         Move();          
