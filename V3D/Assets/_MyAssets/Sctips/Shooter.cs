@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    const string PROJECTILES_PARENT_NAME = "Projectiles";
+    const string BULLETS_PARENT_NAME = "Bullets";
     
     [SerializeField] Bullet bullet;
-    [SerializeField] Transform gun;//???
+    [SerializeField] Transform gun;    
+    [SerializeField] float gunZAxis = 2f;
 
     GameObject projectilesParent;
 
@@ -20,7 +21,7 @@ public class Shooter : MonoBehaviour
 			
     void Start()
     {
-        CreateProjectilesParent();
+        CreateBulletsParent();
     }
      
     #endregion
@@ -34,19 +35,27 @@ public class Shooter : MonoBehaviour
 
     #endregion
 
-    void CreateProjectilesParent()
+    void CreateBulletsParent()
     {
-        projectilesParent = GameObject.Find(PROJECTILES_PARENT_NAME);
+        projectilesParent = GameObject.Find(BULLETS_PARENT_NAME);
         if (!projectilesParent)
         {
-            projectilesParent = new GameObject(PROJECTILES_PARENT_NAME);
+            projectilesParent = new GameObject(BULLETS_PARENT_NAME);
         }
+    }
+
+    public void SetGunPos(Camera mainCamera)
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = gunZAxis + transform.position.z;
+        gun.position = mainCamera.ScreenToWorldPoint(mousePos);         
+        gun.rotation = mainCamera.transform.rotation;
     }
 
     public void Shoot()
     {
 
-        Instantiate(bullet, gun.position, Quaternion.identity, projectilesParent.transform);
+        Instantiate(bullet, gun.position, gun.rotation, projectilesParent.transform);
 
         //RaycastHit hit;
         //if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))

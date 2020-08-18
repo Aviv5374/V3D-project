@@ -37,8 +37,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
-        {
+        {            
             shooter.Shoot();
+        }
+        else
+        {
+            shooter.SetGunPos(mainCamera);
         }
 
         Move();          
