@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+
+    public Vector3 target;
+
     [SerializeField] float speed = 4.5f;
     [SerializeField] float maxLifeTime = 7f;
+    [SerializeField] float gunZAxis = 5f;
 
     #region Initialization
 
@@ -30,8 +34,9 @@ public class Bullet : MonoBehaviour
     #region Updating	 
 
     void Update()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    {        
+        //Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.Translate(target * speed * Time.deltaTime);
     }
 	
 	#endregion

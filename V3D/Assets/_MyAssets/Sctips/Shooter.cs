@@ -8,7 +8,7 @@ public class Shooter : MonoBehaviour
     
     [SerializeField] Bullet bullet;
     [SerializeField] Transform gun;    
-    [SerializeField] float gunZAxis = 2f;
+    [SerializeField] float gunZAxis = 5f;
 
     GameObject projectilesParent;
 
@@ -30,7 +30,7 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        
+        gun.rotation = Camera.main.transform.rotation;
     }
 
     #endregion
@@ -44,19 +44,19 @@ public class Shooter : MonoBehaviour
         }
     }
 
-    public void SetGunPos(Camera mainCamera)
+    public Vector3 SetTarget(Camera mainCamera)
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = gunZAxis + transform.position.z;
-        gun.position = mainCamera.ScreenToWorldPoint(mousePos);         
-        gun.rotation = mainCamera.transform.rotation;
+        mousePos.z = gunZAxis;        
+        return mainCamera.ScreenToWorldPoint(mousePos);        
     }
 
-    public void Shoot()
+    public void Shoot(Camera mainCamera)
     {
 
-        Instantiate(bullet, gun.position, gun.rotation, projectilesParent.transform);
-
+        Bullet tempBullet = Instantiate(bullet, gun.position, gun.rotation, projectilesParent.transform);
+        tempBullet.target = SetTarget(mainCamera);
+        
         //RaycastHit hit;
         //if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         //{
