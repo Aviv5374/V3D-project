@@ -3,29 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimatorHandler : AnimatorHandler
-{   
+{
 
     #region Initialization
 
-	void Awake()
-	{
-		
-	}
-			
-    void Start()
+    protected override void Awake()
     {
-        
+        base.Awake();
     }
-     
+
     #endregion
 
-    #region Updating	 
-
-    void Update()
+    public void SetRruning(bool setTo)
     {
-        
+        myAnimator.SetBool(myAnimtorParameters[0].name, setTo);
     }
-	
-	#endregion
-		
+
 }

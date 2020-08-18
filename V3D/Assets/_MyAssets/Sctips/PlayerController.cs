@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    CharacterController controller;
+    
+
     ThirdPersonController thirdPersonController;
+    PlayerAnimatorHandler playerAnimator;
 
     #region Initialization
 
     void Awake()
-    {        
-        controller = GetComponent<CharacterController>();
+    {                
         thirdPersonController = GetComponent<ThirdPersonController>();
-	}
+        playerAnimator = GetComponent<PlayerAnimatorHandler>();
+
+    }
     
 
     void Start()
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         float horizontalAxis = Input.GetAxisRaw("Horizontal");
         float verticalAxis = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
+        playerAnimator.SetRruning(direction.magnitude >= 0.1f);
         thirdPersonController.ThirdPersonMovment(direction);
     }
 
