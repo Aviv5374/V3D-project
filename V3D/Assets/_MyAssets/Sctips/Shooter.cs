@@ -7,10 +7,9 @@ public class Shooter : MonoBehaviour
     const string BULLETS_PARENT_NAME = "Bullets";
     
     [SerializeField] Bullet bullet;
-    [SerializeField] Transform gun;    
-    [SerializeField] float gunZAxis = 5f;
-    [SerializeField] float raycastRadius = 1f;
-    [SerializeField] float range = 10000f;
+    [SerializeField] Transform gun;
+    [SerializeField] float distanceRay = 100f;
+    [SerializeField] LayerMask layerMask;
 
     GameObject projectilesParent;
 
@@ -18,11 +17,11 @@ public class Shooter : MonoBehaviour
 
     void Awake()
 	{
-		
-	}
+        
+    }
 			
     void Start()
-    {
+    {        
         CreateBulletsParent();
     }
      
@@ -32,7 +31,7 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        gun.rotation = Camera.main.transform.rotation;
+       
     }
 
     #endregion
@@ -46,46 +45,29 @@ public class Shooter : MonoBehaviour
         }
     }
 
-    public Vector3 SetTarget(Camera mainCamera)
+    public void SetGunRotation(Quaternion cameraRotation)
     {
-        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z);
-        Debug.Log("mousePos:" + mousePos);
-        Debug.Log("mainCamera.ScreenToWorldPoint(mousePos): " + mainCamera.ScreenToWorldPoint(mousePos));
-        return mainCamera.ScreenToWorldPoint(mousePos);
-        //Ray mouseRay = mainCamera.ScreenPointToRay(mousePos);
-        //RaycastHit hitInfo;
-        //Physics.SphereCast(mouseRay, raycastRadius, out hitInfo);
-        //return mouseRay.GetPoint(raycastRadius);        
+        gun.rotation = cameraRotation;
     }
 
     public void Shoot(Camera mainCamera)
     {
-        Debug.Log("LOL1");
+        Debug.Log("LOL1");        
+        Bullet tempBullet = Instantiate(bullet, gun.position, gun.rotation, projectilesParent.transform);
+        tempBullet.target = SetTarget(mainCamera).normalized;        
+    }
+
+    Vector3 SetTarget(Camera mainCamera)
+    {                           
         Vector3 clickPos = -Vector3.one;
         Ray mouseRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-        Plane plane = new Plane(Vector3.one, 0);
-        float DistanceToPlane;
-        if (plane.Raycast(mouseRay, out DistanceToPlane))
+        RaycastHit hitInfo;
+        if (Physics.Raycast(mouseRay, out hitInfo, distanceRay, layerMask))
         {
-
-            Debug.Log("mouseRay Pos: " + mouseRay.GetPoint(DistanceToPlane));
-            clickPos = mouseRay.GetPoint(DistanceToPlane);
+            Debug.Log("mouseRay Pos: " + hitInfo.point);
+            clickPos = hitInfo.point;
         }
-        Vector3 finalClickPos = new Vector3(clickPos.x, clickPos.y, 1);
-
-        //RaycastHit hitInfo;
-        //if (Physics.Raycast(mouseRay, out hitInfo))
-        //{
-        //    Debug.Log("mouseRay Pos: " + hitInfo.point);
-        //    clickPos = hitInfo.point;
-        //}        
-
-
-        //Bullet tempBullet = Instantiate(bullet, gun.position, Quaternion.LookRotation(finalClickPos), projectilesParent.transform);
-        Bullet tempBullet = Instantiate(bullet, clickPos, Quaternion.identity, projectilesParent.transform);
-        tempBullet.target = clickPos; //SetTarget(mainCamera);
-        
+        return clickPos;
     }
 
 

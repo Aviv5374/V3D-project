@@ -24,34 +24,34 @@ public class PlayerController : MonoBehaviour
         shooter = GetComponent<Shooter>();
 
     }
-    
+
     void Start()
     {
-        
+
     }
-     
+
     #endregion
 
     #region Updating	 
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {            
-            shooter.Shoot(mainCamera);
+        if (Input.GetMouseButton(1))
+        {
+            shooter.SetGunRotation(mainCamera.transform.rotation);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                shooter.Shoot(mainCamera);
+            }
         }
-        //else
-        //{
-        //    shooter.SetTarget(mainCamera);
-        //}
 
-        Move();          
+        Move();
     }
 
     #endregion
 
     void Move()
-    {        
+    {
         float horizontalAxis = Input.GetAxisRaw("Horizontal");
         float verticalAxis = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontalAxis, 0, verticalAxis).normalized;
@@ -59,6 +59,6 @@ public class PlayerController : MonoBehaviour
         thirdPersonController.ThirdPersonMovment(direction, mainCamera.transform);
     }
 
-        
+
 
 }
