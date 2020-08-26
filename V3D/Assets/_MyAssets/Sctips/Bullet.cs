@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {        
         //Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        transform.Translate(target * speed * Time.deltaTime);
+        //transform.Translate(target * speed * Time.deltaTime);
     }
 	
 	#endregion
